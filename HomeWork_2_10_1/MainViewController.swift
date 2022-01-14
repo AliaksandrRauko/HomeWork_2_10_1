@@ -7,7 +7,11 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+enum Link: String {
+    case DogImageURL = "https://dog.ceo/api/breeds/image/random"
+}
+
+class MainViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
