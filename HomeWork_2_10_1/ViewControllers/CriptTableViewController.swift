@@ -7,22 +7,27 @@
 
 import UIKit
 
-class AnimeTableViewController: UITableViewController {
+class CriptTableViewController: UITableViewController {
 
-    private var universities: [University] = []
+    private var cripts: [Cript] = []
 
+    //Евгения!
+    //вот сюда заходит и смотрю отладкой, что таблица со значениями, значит json распарсили норм
     override func numberOfSections(in tableView: UITableView) -> Int {
-        universities.count
+        cripts.count
     }
-
+    
+    //Евгения!
+    //у меня затык вот здесь, почему-то сюда не заходит приложение и поэтому экран пустой
+    //что упускаю?)
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Sell", for: indexPath)
 
-        let university = universities[indexPath.row]
+        let cript = cripts[indexPath.row]
 
         var content = cell.defaultContentConfiguration()
         
-        content.text = university.price
+        content.text = cript.price
         cell.contentConfiguration = content
 
         return cell
@@ -32,20 +37,18 @@ class AnimeTableViewController: UITableViewController {
 
 
 // MARK: - Networking
-extension AnimeTableViewController {
+extension CriptTableViewController {
     
     func fetchAnime() {
         guard let url = URL(string: Link.AnimeListURL.rawValue) else { return }
         
         URLSession.shared.dataTask(with: url) { data, response, error in
-            guard let data = data, let response = response else {
+            guard let data = data else {
                 print(error?.localizedDescription ?? "No error description")
                 return
             }
-            print(response)
             do {
-                let JsonDecoder = JSONDecoder()
-                self.universities = try JsonDecoder.decode([University].self, from: data)
+                self.cripts = try JSONDecoder().decode([Cript].self, from: data)
                 
                 DispatchQueue.main.async {
                     self.tableView.reloadData()

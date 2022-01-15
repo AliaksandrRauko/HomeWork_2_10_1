@@ -7,8 +7,8 @@
 
 import Foundation
 
-struct University: Codable {
-    let price: String
 
+struct Cript: Codable {
+    let price: String
 }
 

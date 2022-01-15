@@ -61,10 +61,10 @@
             </objects>
             <point key="canvasLocation" x="928.98550724637687" y="85.714285714285708"/>
         </scene>
-        <!--Anime Table View Controller-->
+        <!--Cript Table View Controller-->
         <scene sceneID="v0S-sA-9Tb">
             <objects>
-                <tableViewController id="ZLd-7h-xMp" customClass="AnimeTableViewController" customModule="HomeWork_2_10_1" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="ZLd-7h-xMp" customClass="CriptTableViewController" customModule="HomeWork_2_10_1" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="YfQ-dq-FUb">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

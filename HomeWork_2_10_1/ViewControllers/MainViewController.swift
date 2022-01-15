@@ -19,7 +19,7 @@ class MainViewController: UIViewController {
             let dogVC = segue.destination as! DogImageViewController
             dogVC.fetchDog()
         } else {
-            let animeVC = segue.destination as! AnimeTableViewController
+            let animeVC = segue.destination as! CriptTableViewController
             animeVC.fetchAnime()
 
         }

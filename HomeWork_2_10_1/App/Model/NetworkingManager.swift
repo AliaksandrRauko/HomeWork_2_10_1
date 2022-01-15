@@ -15,7 +15,7 @@ class NetworkingManager {
         guard let url = URL(string: Link.DogImageURL.rawValue) else { return }
         
         URLSession.shared.dataTask(with: url) { data, response, error in
-            guard let data = data, let response = response else {
+            guard let data = data else {
                 print(error?.localizedDescription ?? "No error description")
                 return
             }
