@@ -24,16 +24,33 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="38"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" title="Show DOG"/>
+                                <state key="normal" title="Show random DOG"/>
                                 <connections>
-                                    <segue destination="acq-rn-aPE" kind="show" id="P6A-xA-vj0"/>
+                                    <segue destination="acq-rn-aPE" kind="show" identifier="showDog" id="P6A-xA-vj0"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ruw-OW-rEz">
+                                <rect key="frame" x="24" y="268" width="366" height="100"/>
+                                <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="86i-L4-IPl"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="38"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Show anime list"/>
+                                <connections>
+                                    <segue destination="ZLd-7h-xMp" kind="show" identifier="ShowAnime" id="slp-Kq-34p"/>
                                 </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="ruw-OW-rEz" firstAttribute="top" secondItem="g57-SE-ygY" secondAttribute="bottom" constant="68" id="0vC-Es-maR"/>
                             <constraint firstItem="g57-SE-ygY" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="100" id="B9Z-HV-fxc"/>
+                            <constraint firstItem="ruw-OW-rEz" firstAttribute="height" secondItem="g57-SE-ygY" secondAttribute="height" id="C66-0Y-YDM"/>
+                            <constraint firstItem="ruw-OW-rEz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="24" id="SxR-lc-mEJ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ruw-OW-rEz" secondAttribute="trailing" constant="24" id="XVT-5a-vw5"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="g57-SE-ygY" secondAttribute="trailing" constant="24" id="ZUG-bz-pGT"/>
                             <constraint firstItem="g57-SE-ygY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="24" id="nWG-HV-a8U"/>
                         </constraints>
@@ -44,21 +61,22 @@
             </objects>
             <point key="canvasLocation" x="928.98550724637687" y="85.714285714285708"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Anime Table View Controller-->
         <scene sceneID="v0S-sA-9Tb">
             <objects>
-                <tableViewController id="ZLd-7h-xMp" sceneMemberID="viewController">
+                <tableViewController id="ZLd-7h-xMp" customClass="AnimeTableViewController" customModule="HomeWork_2_10_1" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="YfQ-dq-FUb">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="b5G-E6-jAP">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="b5G-E6-jAP">
                                 <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="b5G-E6-jAP" id="OeF-zt-io4">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <color key="backgroundColor" systemColor="systemGreenColor"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
@@ -134,6 +152,9 @@
         </systemColor>
         <systemColor name="systemGray5Color">
             <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
