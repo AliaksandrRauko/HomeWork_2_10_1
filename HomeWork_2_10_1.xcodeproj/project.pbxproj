@@ -66,19 +66,28 @@
 		1E3F1FCF27919B4F00E8AD72 /* HomeWork_2_10_1 */ = {
 			isa = PBXGroup;
 			children = (
+				1E79AAC727994805000C4BD8 /* Services */,
 				1E9843A727932E4F00CA049B /* ViewControllers */,
+				1E9843A327932DB300CA049B /* StoryBoards */,
 				1E9843A527932DEC00CA049B /* App */,
 				1E9843A427932DD500CA049B /* Resources */,
-				1E9843A327932DB300CA049B /* StoryBoards */,
 			);
 			path = HomeWork_2_10_1;
+			sourceTree = "<group>";
+		};
+		1E79AAC727994805000C4BD8 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				1E3F1FE82791AEFC00E8AD72 /* NetworkingManager.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		1E9843A327932DB300CA049B /* StoryBoards */ = {
 			isa = PBXGroup;
 			children = (
-				1E3F1FDB27919B4F00E8AD72 /* LaunchScreen.storyboard */,
 				1E3F1FD627919B4F00E8AD72 /* Main.storyboard */,
+				1E3F1FDB27919B4F00E8AD72 /* LaunchScreen.storyboard */,
 			);
 			path = StoryBoards;
 			sourceTree = "<group>";
@@ -107,7 +116,6 @@
 			children = (
 				1E3F1FEA2791B10900E8AD72 /* Dog.swift */,
 				1EDFEE6E2792E43300721884 /* Cript.swift */,
-				1E3F1FE82791AEFC00E8AD72 /* NetworkingManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";

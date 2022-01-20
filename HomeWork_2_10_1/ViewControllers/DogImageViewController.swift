@@ -12,13 +12,14 @@ class DogImageViewController: UIViewController {
     @IBOutlet var imageView: UIImageView!
     @IBOutlet var activityIndicator: UIActivityIndicatorView!
     
-
-    private var dog: Dog!
+    
+    var dog: Dog!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         activityIndicator.startAnimating()
         activityIndicator.hidesWhenStopped = true
+        fetchImage()
     }
 }
 
@@ -27,33 +28,25 @@ class DogImageViewController: UIViewController {
 // MARK: - Networking
 extension DogImageViewController {
     
+    //
+    //Евгения! подскажи, почему у меня возвращает nil??
+    //
     func fetchDog() {
-        guard let url = URL(string: Link.DogImageURL.rawValue) else { return }
-        
-        URLSession.shared.dataTask(with: url) { data, _, error in
-            guard let data = data else {
-                print(error?.localizedDescription ?? "No error description")
-                return
-            }
-            do {
-                self.dog = try JSONDecoder().decode(Dog.self, from: data)
-                
-                
-                DispatchQueue.global().async {
-                    guard let url = URL(string: self.dog.message) else { return }
-                    guard let imageData = try? Data(contentsOf: url) else { return }
-                    
-                    DispatchQueue.main.async {
-                        self.imageView.image = UIImage(data: imageData)
-                        self.activityIndicator.stopAnimating()
-                    }
-                }
-                
-            } catch {
+        NetworkingManager.shared.fetchDog(from: Link.dogImageURL.rawValue) { dog in
+            self.dog = dog
+        }
+    }
+    
+    private func fetchImage() {
+        ImageManager.shared.fetchImage(from: dog.message) { result in
+            switch result {
+            case .success(let data):
+                self.imageView.image = UIImage(data: data)
+                self.activityIndicator.stopAnimating()
+            case .failure(let error):
                 print(error.localizedDescription)
             }
-            
-        }.resume()
+        }
     }
     
 }
